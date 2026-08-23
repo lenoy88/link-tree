@@ -10,7 +10,6 @@
 content="Jermaine Robinson - Technology, Business, The Hungry Table and Creative Projects.">
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -23,20 +22,16 @@ html{
 
 body{
     font-family:Arial, Helvetica, sans-serif;
-
     background:
-    linear-gradient(
-        135deg,
-        #ffffff 0%,
-        #fffaf0 45%,
-        #ffffff 75%,
-        #fff4cf 100%
-    );
-
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #fffaf0 45%,
+            #ffffff 75%,
+            #fff4cf 100%
+        );
     color:#2b2116;
-
     min-height:100vh;
-
     padding:25px 15px 50px;
 }
 
@@ -44,230 +39,140 @@ body{
     --gold:#d79a16;
     --gold2:#f4c34f;
     --darkgold:#9c6800;
-    --cream:#fffaf0;
     --text:#2b2116;
-    --gray:#6f675e;
 }
-
-/* MAIN WRAPPER */
 
 .page{
     max-width:820px;
     margin:auto;
 }
 
+/* HIDDEN MUSIC */
 
-/* MUSIC CARD */
+#musicFrame{
+    position:fixed;
+    width:1px;
+    height:1px;
+    opacity:0;
+    pointer-events:none;
+    left:-9999px;
+    top:-9999px;
+}
 
-.music-card{
-    background:white;
+/* MUSIC MESSAGE */
 
-    border:1px solid #f0dfb5;
-
-    border-radius:24px;
-
-    padding:18px;
-
-    margin-bottom:30px;
-
-    box-shadow:
-    0 12px 35px rgba(125,90,20,.14);
-
+.music-note{
     text-align:center;
-}
-
-.music-card h3{
     color:var(--gold);
-
+    font-weight:bold;
     font-size:13px;
-
     letter-spacing:2px;
-
-    margin-bottom:5px;
+    margin-bottom:20px;
 }
-
-.music-card h2{
-    font-family:Georgia, serif;
-
-    font-size:22px;
-
-    color:#3a2918;
-
-    margin-bottom:15px;
-}
-
-.music-frame{
-    width:100%;
-
-    height:120px;
-
-    border:0;
-
-    border-radius:16px;
-
-    overflow:hidden;
-}
-
 
 /* HEADER */
 
 .header{
     text-align:center;
-
     margin-bottom:30px;
 }
 
 .welcome{
     color:var(--gold);
-
     font-size:13px;
-
     letter-spacing:3px;
-
     text-transform:uppercase;
-
     font-weight:bold;
-
     margin-bottom:7px;
 }
 
 .header h1{
     font-family:Georgia, serif;
-
     font-size:clamp(40px,8vw,67px);
-
     color:var(--darkgold);
-
     line-height:1;
 }
 
 .header h2{
     margin-top:12px;
-
     color:#59432b;
-
     font-size:17px;
-
     letter-spacing:3px;
-
     text-transform:uppercase;
 }
 
 .crown{
     color:var(--gold);
-
     font-size:29px;
-
     margin-top:15px;
 }
-
 
 /* PHOTO GRID */
 
 .photo-grid{
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
     gap:18px;
-
     margin:25px 0 35px;
 }
 
 .photo-card{
     background:white;
-
     overflow:hidden;
-
     border-radius:25px;
-
     border:1px solid #eed89f;
-
-    box-shadow:
-    0 12px 30px rgba(88,61,13,.14);
-
+    box-shadow:0 12px 30px rgba(88,61,13,.14);
     transition:.3s;
 }
 
 .photo-card:hover{
     transform:translateY(-4px);
-
-    box-shadow:
-    0 18px 40px rgba(88,61,13,.20);
+    box-shadow:0 18px 40px rgba(88,61,13,.20);
 }
 
 .photo-card img{
     width:100%;
-
     height:365px;
-
     object-fit:cover;
-
     display:block;
 }
 
 .photo-info{
     text-align:center;
-
     padding:22px 15px;
 }
 
 .photo-icon{
     width:52px;
-
     height:52px;
-
     margin:-48px auto 10px;
-
     position:relative;
-
     z-index:10;
-
-    background:
-    linear-gradient(
-        135deg,
-        var(--gold2),
-        var(--gold)
-    );
-
+    background:linear-gradient(135deg,var(--gold2),var(--gold));
     color:white;
-
     border:4px solid white;
-
     border-radius:50%;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     font-size:24px;
-
-    box-shadow:
-    0 6px 20px rgba(215,154,22,.35);
+    box-shadow:0 6px 20px rgba(215,154,22,.35);
 }
 
 .photo-info h3{
     font-family:Georgia, serif;
-
     color:#4a3218;
-
     font-size:23px;
-
     margin-top:6px;
 }
 
 .photo-info p{
     color:#766655;
-
     margin-top:4px;
-
     font-size:14px;
 }
 
-
-/* BUTTONS */
+/* LINKS */
 
 .links{
     margin-top:15px;
@@ -275,82 +180,47 @@ body{
 
 .link-button{
     display:flex;
-
     align-items:center;
-
     width:100%;
-
     min-height:82px;
-
     padding:13px 20px;
-
     margin-bottom:14px;
-
     text-decoration:none;
-
     color:var(--text);
-
     background:white;
-
     border:1px solid #eee3cc;
-
     border-radius:20px;
-
-    box-shadow:
-    0 10px 25px rgba(74,50,24,.11);
-
+    box-shadow:0 10px 25px rgba(74,50,24,.11);
     transition:.25s;
 }
 
 .link-button:hover{
     transform:translateY(-3px);
-
     border-color:var(--gold);
-
-    box-shadow:
-    0 13px 30px rgba(215,154,22,.18);
+    box-shadow:0 13px 30px rgba(215,154,22,.18);
 }
 
 .featured{
-    background:
-    linear-gradient(
-        135deg,
-        #ffe894,
-        #f5bd37
-    );
-
+    background:linear-gradient(135deg,#ffe894,#f5bd37);
     border-color:#e5a81e;
 }
 
 .icon{
     width:52px;
-
     height:52px;
-
     min-width:52px;
-
     border-radius:50%;
-
     background:#fff9e9;
-
     border:1px solid #f2d78d;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     margin-right:16px;
-
     font-size:25px;
-
-    color:var(--gold);
 }
 
 .featured .icon{
     background:rgba(255,255,255,.55);
-
     border-color:white;
 }
 
@@ -360,23 +230,16 @@ body{
 
 .link-title{
     display:block;
-
     font-family:Georgia, serif;
-
     font-size:19px;
-
     font-weight:bold;
-
     color:#3b2a1a;
 }
 
 .link-description{
     display:block;
-
     color:#756a5e;
-
     font-size:13px;
-
     margin-top:4px;
 }
 
@@ -386,11 +249,8 @@ body{
 
 .arrow{
     color:var(--gold);
-
     font-size:30px;
-
     font-weight:bold;
-
     margin-left:8px;
 }
 
@@ -398,111 +258,65 @@ body{
     color:white;
 }
 
-
-/* FOLLOW ME */
+/* FOLLOW */
 
 .follow{
     text-align:center;
-
     margin-top:42px;
 }
 
 .follow-crown{
     color:var(--gold);
-
     font-size:25px;
-
-    margin-bottom:2px;
 }
 
 .follow h2{
     color:var(--gold);
-
     font-family:Georgia, serif;
-
     font-size:34px;
 }
 
 .follow p{
     color:#7b7166;
-
     margin-top:5px;
 }
 
-
-/* SOCIAL MEDIA */
-
 .social-row{
     display:grid;
-
     grid-template-columns:repeat(3,1fr);
-
     gap:18px;
-
     margin-top:25px;
 }
 
 .social{
     color:#4a3218;
-
     text-decoration:none;
-
     text-align:center;
-
     font-weight:bold;
-
     font-size:13px;
 }
 
 .social-circle{
     width:68px;
-
     height:68px;
-
     border-radius:50%;
-
     margin:0 auto 8px;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     background:white;
-
     border:1px solid #efd99e;
-
     color:var(--gold);
-
     font-size:29px;
-
-    box-shadow:
-    0 8px 22px rgba(86,57,13,.14);
-
-    transition:.25s;
+    box-shadow:0 8px 22px rgba(86,57,13,.14);
 }
-
-.social:hover .social-circle{
-    transform:translateY(-4px);
-
-    background:#fff7de;
-}
-
-
-/* FOOTER */
 
 footer{
     text-align:center;
-
     margin-top:45px;
-
     padding:28px 12px 10px;
-
     border-top:1px solid #eedba9;
-
     color:#8a7250;
-
     font-size:12px;
 }
 
@@ -510,11 +324,7 @@ footer strong{
     color:var(--gold);
 }
 
-
-/* MOBILE */
-
 @media(max-width:650px){
-
     body{
         padding:15px 12px 35px;
     }
@@ -549,18 +359,12 @@ footer strong{
         font-size:20px;
     }
 
-    .link-button{
-        padding:12px 14px;
-    }
-
     .link-title{
         font-size:17px;
     }
-
 }
 
 @media(max-width:420px){
-
     .photo-card img{
         height:220px;
     }
@@ -569,430 +373,391 @@ footer strong{
         font-size:12px;
         letter-spacing:2px;
     }
-
 }
-
 </style>
-
 </head>
-
 
 <body>
 
+<!-- HIDDEN YOUTUBE MUSIC -->
+<iframe
+    id="musicFrame"
+    allow="autoplay"
+    title="Background Music">
+</iframe>
+
 <div class="page">
 
-
-<!-- MUSIC -->
-
-<div class="music-card">
-
-    <h3>
-        🎵 NOW PLAYING
-    </h3>
-
-    <h2>
-        My Page Vibe
-    </h2>
-
-    <iframe
-        class="music-frame"
-        src="https://www.youtube.com/embed/qM19eRgOK1Q?autoplay=1&loop=1&playlist=qM19eRgOK1Q"
-        title="YouTube Music"
-        allow="autoplay; encrypted-media"
-        allowfullscreen>
-    </iframe>
-
-</div>
-
-
-<!-- HEADER -->
-
-<header class="header">
-
-    <div class="welcome">
-        Welcome To My Official Links
+    <div class="music-note">
+        🎵 TAP ANYWHERE TO START THE MUSIC
     </div>
 
-    <h1>
-        Jermaine Robinson
-    </h1>
+    <header class="header">
 
-    <h2>
+        <div class="welcome">
+            Welcome To My Official Links
+        </div>
+
+        <h1>
+            Jermaine Robinson
+        </h1>
+
+        <h2>
+            Technology • Business • Creative Projects
+        </h2>
+
+        <div class="crown">
+            ♛
+        </div>
+
+    </header>
+
+    <!-- REAL PHOTOS -->
+
+    <div class="photo-grid">
+
+        <!-- IT PHOTO -->
+        <div class="photo-card">
+
+            <img
+                src="it-maine.png"
+                alt="Jermaine Robinson Information Technology">
+
+            <div class="photo-info">
+
+                <div class="photo-icon">
+                    🖥️
+                </div>
+
+                <h3>
+                    Information Technology
+                </h3>
+
+                <p>
+                    Web • I.T. • Technology
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- CHEF PHOTO -->
+        <div class="photo-card">
+
+            <img
+                src="chef-maine.png"
+                alt="Chef Jermaine">
+
+            <div class="photo-info">
+
+                <div class="photo-icon">
+                    👨🏾‍🍳
+                </div>
+
+                <h3>
+                    Chef Jermaine
+                </h3>
+
+                <p>
+                    The Hungry Table
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- LINKS -->
+
+    <div class="links">
+
+        <a
+            class="link-button"
+            href="https://jrwebitsolutions.com"
+            target="_blank">
+
+            <div class="icon">
+                💻
+            </div>
+
+            <div class="link-text">
+
+                <span class="link-title">
+                    JR Web & I.T. Solutions
+                </span>
+
+                <span class="link-description">
+                    Web development and technology solutions
+                </span>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+        <a
+            class="link-button featured"
+            href="https://lenoy88.github.io/Hungry-Table/"
+            target="_blank">
+
+            <div class="icon">
+                🍽️
+            </div>
+
+            <div class="link-text">
+
+                <span class="link-title">
+                    The Hungry Table
+                </span>
+
+                <span class="link-description">
+                    Homemade flavor by Chef Jermaine
+                </span>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+        <a class="link-button" href="#">
+
+            <div class="icon">
+                💼
+            </div>
+
+            <div class="link-text">
+
+                <span class="link-title">
+                    My I.T. Portfolio
+                </span>
+
+                <span class="link-description">
+                    Technology projects, skills and experience
+                </span>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+        <a class="link-button" href="#">
+
+            <div class="icon">
+                🌐
+            </div>
+
+            <div class="link-text">
+
+                <span class="link-title">
+                    Website Projects
+                </span>
+
+                <span class="link-description">
+                    Websites and digital projects I've created
+                </span>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+        <a class="link-button" href="#">
+
+            <div class="icon">
+                📸
+            </div>
+
+            <div class="link-text">
+
+                <span class="link-title">
+                    Creative & Portfolio Pages
+                </span>
+
+                <span class="link-description">
+                    Model, artist and creative web projects
+                </span>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+        <a
+            class="link-button"
+            href="mailto:Jermainerobinson815@gmail.com">
+
+            <div class="icon">
+                ✉️
+            </div>
+
+            <div class="link-text">
+
+                <span class="link-title">
+                    Email Me
+                </span>
+
+                <span class="link-description">
+                    Jermainerobinson815@gmail.com
+                </span>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+        <a
+            class="link-button"
+            href="tel:+17573670547">
+
+            <div class="icon">
+                📱
+            </div>
+
+            <div class="link-text">
+
+                <span class="link-title">
+                    Call or Text Me
+                </span>
+
+                <span class="link-description">
+                    757-367-0547
+                </span>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+    </div>
+
+    <!-- FOLLOW -->
+
+    <section class="follow">
+
+        <div class="follow-crown">
+            ♛
+        </div>
+
+        <h2>
+            Follow Me
+        </h2>
+
+        <p>
+            Connect with me on social media
+        </p>
+
+        <div class="social-row">
+
+            <a class="social" href="#" target="_blank">
+
+                <div class="social-circle">
+                    ◎
+                </div>
+
+                Instagram
+
+            </a>
+
+            <a class="social" href="#" target="_blank">
+
+                <div class="social-circle">
+                    f
+                </div>
+
+                Facebook
+
+            </a>
+
+            <a class="social" href="#" target="_blank">
+
+                <div class="social-circle">
+                    𝕏
+                </div>
+
+                X / Twitter
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        © 2026
+        <strong>
+            Jermaine Robinson
+        </strong>
+
+        <br>
+
         Technology • Business • Creative Projects
-    </h2>
 
-    <div class="crown">
-        ♛
-    </div>
-
-</header>
-
-
-<!-- REAL PHOTOS -->
-
-<div class="photo-grid">
-
-
-    <!-- I.T. PHOTO -->
-
-    <div class="photo-card">
-
-        <img
-        src="it-main.png"
-        alt="Jermaine Robinson Information Technology">
-
-        <div class="photo-info">
-
-            <div class="photo-icon">
-                🖥️
-            </div>
-
-            <h3>
-                Information Technology
-            </h3>
-
-            <p>
-                Web • I.T. • Technology
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <!-- CHEF PHOTO -->
-
-    <div class="photo-card">
-
-        <img
-        src="chef-main.png"
-        alt="Chef Jermaine">
-
-        <div class="photo-info">
-
-            <div class="photo-icon">
-                👨🏾‍🍳
-            </div>
-
-            <h3>
-                Chef Jermaine
-            </h3>
-
-            <p>
-                The Hungry Table
-            </p>
-
-        </div>
-
-    </div>
-
+    </footer>
 
 </div>
 
+<script>
+let musicStarted = false;
 
-<!-- LINKS -->
+function startMusic() {
 
-<div class="links">
+    if (musicStarted) {
+        return;
+    }
 
+    musicStarted = true;
 
-    <!-- JR WEB -->
+    const musicFrame =
+        document.getElementById("musicFrame");
 
-    <a
-        class="link-button"
-        href="https://jrwebitsolutions.com"
-        target="_blank">
+    musicFrame.src =
+        "https://www.youtube.com/embed/qM19eRgOK1Q?autoplay=1&loop=1&playlist=qM19eRgOK1Q";
 
-        <div class="icon">
-            💻
-        </div>
+    const note =
+        document.querySelector(".music-note");
 
-        <div class="link-text">
+    if (note) {
+        note.textContent = "🎵 MUSIC PLAYING";
+    }
+}
 
-            <span class="link-title">
-                JR Web & I.T. Solutions
-            </span>
+/* START MUSIC ON FIRST USER INTERACTION */
 
-            <span class="link-description">
-                Web development and technology solutions
-            </span>
+document.addEventListener(
+    "click",
+    startMusic,
+    { once:true }
+);
 
-        </div>
-
-        <div class="arrow">
-            ›
-        </div>
-
-    </a>
-
-
-    <!-- HUNGRY TABLE -->
-
-    <a
-        class="link-button featured"
-        href="https://lenoy88.github.io/Hungry-Table/"
-        target="_blank">
-
-        <div class="icon">
-            🍽️
-        </div>
-
-        <div class="link-text">
-
-            <span class="link-title">
-                The Hungry Table
-            </span>
-
-            <span class="link-description">
-                Homemade flavor by Chef Jermaine
-            </span>
-
-        </div>
-
-        <div class="arrow">
-            ›
-        </div>
-
-    </a>
-
-
-    <!-- IT PORTFOLIO -->
-
-    <a
-        class="link-button"
-        href="#">
-
-        <div class="icon">
-            💼
-        </div>
-
-        <div class="link-text">
-
-            <span class="link-title">
-                My I.T. Portfolio
-            </span>
-
-            <span class="link-description">
-                Technology projects, skills and experience
-            </span>
-
-        </div>
-
-        <div class="arrow">
-            ›
-        </div>
-
-    </a>
-
-
-    <!-- WEBSITE PROJECTS -->
-
-    <a
-        class="link-button"
-        href="#">
-
-        <div class="icon">
-            🌐
-        </div>
-
-        <div class="link-text">
-
-            <span class="link-title">
-                Website Projects
-            </span>
-
-            <span class="link-description">
-                Websites and digital projects I've created
-            </span>
-
-        </div>
-
-        <div class="arrow">
-            ›
-        </div>
-
-    </a>
-
-
-    <!-- CREATIVE -->
-
-    <a
-        class="link-button"
-        href="#">
-
-        <div class="icon">
-            📸
-        </div>
-
-        <div class="link-text">
-
-            <span class="link-title">
-                Creative & Portfolio Pages
-            </span>
-
-            <span class="link-description">
-                Model, artist and creative web projects
-            </span>
-
-        </div>
-
-        <div class="arrow">
-            ›
-        </div>
-
-    </a>
-
-
-    <!-- EMAIL -->
-
-    <a
-        class="link-button"
-        href="mailto:Jermainerobinson815@gmail.com">
-
-        <div class="icon">
-            ✉️
-        </div>
-
-        <div class="link-text">
-
-            <span class="link-title">
-                Email Me
-            </span>
-
-            <span class="link-description">
-                Jermainerobinson815@gmail.com
-            </span>
-
-        </div>
-
-        <div class="arrow">
-            ›
-        </div>
-
-    </a>
-
-
-    <!-- PHONE -->
-
-    <a
-        class="link-button"
-        href="tel:+17573670547">
-
-        <div class="icon">
-            📱
-        </div>
-
-        <div class="link-text">
-
-            <span class="link-title">
-                Call or Text Me
-            </span>
-
-            <span class="link-description">
-                757-367-0547
-            </span>
-
-        </div>
-
-        <div class="arrow">
-            ›
-        </div>
-
-    </a>
-
-
-</div>
-
-
-<!-- FOLLOW -->
-
-<section class="follow">
-
-    <div class="follow-crown">
-        ♛
-    </div>
-
-    <h2>
-        Follow Me
-    </h2>
-
-    <p>
-        Connect with me on social media
-    </p>
-
-
-    <div class="social-row">
-
-
-        <!-- INSTAGRAM -->
-
-        <a
-        class="social"
-        href="#"
-        target="_blank">
-
-            <div class="social-circle">
-                ◎
-            </div>
-
-            Instagram
-
-        </a>
-
-
-        <!-- FACEBOOK -->
-
-        <a
-        class="social"
-        href="#"
-        target="_blank">
-
-            <div class="social-circle">
-                f
-            </div>
-
-            Facebook
-
-        </a>
-
-
-        <!-- X -->
-
-        <a
-        class="social"
-        href="#"
-        target="_blank">
-
-            <div class="social-circle">
-                𝕏
-            </div>
-
-            X / Twitter
-
-        </a>
-
-
-    </div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-    © 2026
-    <strong>
-        Jermaine Robinson
-    </strong>
-
-    <br>
-
-    Technology • Business • Creative Projects
-
-</footer>
-
-
-</div>
+document.addEventListener(
+    "touchstart",
+    startMusic,
+    { once:true }
+);
+</script>
 
 </body>
 </html>
