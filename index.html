@@ -1,1 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Jermaine Robinson | Official Links</title>
+
+  <meta name="description"
+  content="Jermaine Robinson - Information Technology, Web Development, The Hungry Table and creative projects.">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+
+      background:
+        radial-gradient(circle at top, #123763 0%, #07111f 35%, #030609 75%);
+
+      color: white;
+
+      min-height: 100vh;
+
+      padding: 35px 18px 60px;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: auto;
+    }
+
+    /* MAIN PHOTOS */
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .photo-card {
+      position: relative;
+      overflow: hidden;
+
+      border-radius: 24px;
+
+      border: 1px solid rgba(255,255,255,.18);
+
+      background: #101820;
+
+      box-shadow: 0 12px 35px rgba(0,0,0,.45);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      display: block;
+
+      transition: .35s;
+    }
+
+    .photo-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .photo-label {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      padding: 22px 15px 14px;
+
+      background:
+        linear-gradient(transparent, rgba(0,0,0,.90));
+
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .photo-label small {
+      display: block;
+      color: #c8d2dc;
+      font-size: 12px;
+      margin-top: 3px;
+    }
+
+    /* HEADER */
+
+    .header {
+      text-align: center;
+      margin: 28px 0 30px;
+    }
+
+    .header h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(38px, 8vw, 62px);
+    }
+
+    .header h2 {
+      color: #68b7ff;
+      font-size: 20px;
+      margin-top: 8px;
+    }
+
+    .header p {
+      color: #b7c5d6;
+      max-width: 580px;
+      margin: 12px auto 0;
+      line-height: 1.7;
+    }
+
+    /* LINKS */
+
+    .links {
+      margin-top: 15px;
+    }
+
+    .link-button {
+      width: 100%;
+      min-height: 76px;
+
+      margin-bottom: 15px;
+
+      padding: 14px 20px;
+
+      display: flex;
+      align-items: center;
+
+      text-decoration: none;
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(24,39,58,.96),
+          rgba(12,20,31,.96)
+        );
+
+      border: 1px solid rgba(104,183,255,.30);
+
+      border-radius: 18px;
+
+      transition: .25s;
+
+      box-shadow:
+        0 8px 24px rgba(0,0,0,.24);
+    }
+
+    .link-button:hover {
+      transform: translateY(-3px);
+
+      border-color: #68b7ff;
+
+      box-shadow:
+        0 10px 30px rgba(50,150,255,.18);
+    }
+
+    .featured {
+      border-color: rgba(255,190,75,.5);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(58,42,15,.95),
+          rgba(27,20,9,.97)
+        );
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      min-width: 50px;
+
+      border-radius: 14px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-right: 15px;
+
+      background: rgba(104,183,255,.13);
+
+      font-size: 25px;
+    }
+
+    .featured .icon {
+      background: rgba(255,190,75,.14);
+    }
+
+    .link-text {
+      flex: 1;
+    }
+
+    .link-title {
+      display: block;
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    .link-description {
+      display: block;
+      color: #aeb7c0;
+      font-size: 12px;
+      margin-top: 3px;
+    }
+
+    .arrow {
+      color: #68b7ff;
+      font-size: 23px;
+    }
+
+    .featured .arrow {
+      color: #ffc35a;
+    }
+
+    /* SOCIAL */
+
+    .contact-title {
+      text-align: center;
+      margin: 38px 0 18px;
+    }
+
+    .contact-title h3 {
+      color: #68b7ff;
+      font-size: 27px;
+    }
+
+    .contact-title p {
+      color: #9ca8b4;
+      margin-top: 5px;
+    }
+
+    .social-row {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 12px;
+
+      margin-top: 20px;
+    }
+
+    .social {
+      background: #111b27;
+
+      border: 1px solid #27384a;
+
+      border-radius: 16px;
+
+      padding: 15px 10px;
+
+      text-align: center;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-size: 13px;
+    }
+
+    .social span {
+      display: block;
+      font-size: 25px;
+      margin-bottom: 4px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      color: #71808f;
+
+      font-size: 12px;
+
+      margin-top: 45px;
+
+      padding-top: 25px;
+
+      border-top: 1px solid #1d2a36;
+    }
+
+    /* MOBILE */
+
+    @media(max-width: 600px) {
+
+      body {
+        padding: 22px 14px 45px;
+      }
+
+      .photo-card img {
+        height: 270px;
+      }
+
+    }
+
+    @media(max-width: 430px) {
+
+      .photo-grid {
+        gap: 9px;
+      }
+
+      .photo-card {
+        border-radius: 16px;
+      }
+
+      .photo-card img {
+        height: 235px;
+      }
+
+      .photo-label {
+        padding: 30px 9px 10px;
+        font-size: 15px;
+      }
+
+      .photo-label small {
+        font-size: 10px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- TWO MAIN PHOTOS -->
+
+  <div class="photo-grid">
+
+    <div class="photo-card">
+
+      <img
+      src="it-main.png"
+      alt="Jermaine Robinson Information Technology">
+
+      <div class="photo-label">
+
+        Information Technology
+
+        <small>
+          Web • I.T. • Technology
+        </small>
+
+      </div>
+
+    </div>
+
+
+    <div class="photo-card">
+
+      <img
+      src="chef-main.png"
+      alt="Chef Jermaine">
+
+      <div class="photo-label">
+
+        Chef Jermaine
+
+        <small>
+          The Hungry Table
+        </small>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- NAME -->
+
+  <header class="header">
+
+    <h1>
+      Jermaine Robinson
+    </h1>
+
+    <h2>
+      Technology • Business • Creative Projects
+    </h2>
+
+    <p>
+      Welcome to my official link page.
+      Explore my technology work, websites,
+      food projects and creative ventures
+      all in one place.
+    </p>
+
+  </header>
+
+
+  <!-- LINKS -->
+
+  <div class="links">
+
+
+    <!-- JR WEB -->
+
+    <a
+    class="link-button"
+    href="https://jrwebitsolutions.com"
+    target="_blank">
+
+      <div class="icon">
+        💻
+      </div>
+
+      <div class="link-text">
+
+        <span class="link-title">
+          JR Web & I.T. Solutions
+        </span>
+
+        <span class="link-description">
+          Web development and technology solutions
+        </span>
+
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+
+    <!-- HUNGRY TABLE -->
+
+    <a
+    class="link-button featured"
+    href="https://lenoy88.github.io/Hungry-Table/"
+    target="_blank">
+
+      <div class="icon">
+        🍽️
+      </div>
+
+      <div class="link-text">
+
+        <span class="link-title">
+          The Hungry Table
+        </span>
+
+        <span class="link-description">
+          Homemade flavor by Chef Jermaine
+        </span>
+
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+
+    <!-- IT PORTFOLIO -->
+
+    <a
+    class="link-button"
+    href="#">
+
+      <div class="icon">
+        🖥️
+      </div>
+
+      <div class="link-text">
+
+        <span class="link-title">
+          My I.T. Portfolio
+        </span>
+
+        <span class="link-description">
+          Technology projects, skills and experience
+        </span>
+
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+
+    <!-- WEBSITE PROJECTS -->
+
+    <a
+    class="link-button"
+    href="#">
+
+      <div class="icon">
+        🌐
+      </div>
+
+      <div class="link-text">
+
+        <span class="link-title">
+          Website Projects
+        </span>
+
+        <span class="link-description">
+          Websites and digital projects I've created
+        </span>
+
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+
+    <!-- CREATIVE -->
+
+    <a
+    class="link-button"
+    href="#">
+
+      <div class="icon">
+        📸
+      </div>
+
+      <div class="link-text">
+
+        <span class="link-title">
+          Creative & Portfolio Pages
+        </span>
+
+        <span class="link-description">
+          Model, artist and creative web projects
+        </span>
+
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+
+    <!-- EMAIL -->
+
+    <a
+    class="link-button"
+    href="mailto:Jermainerobinson815@gmail.com">
+
+      <div class="icon">
+        ✉️
+      </div>
+
+      <div class="link-text">
+
+        <span class="link-title">
+          Email Me
+        </span>
+
+        <span class="link-description">
+          Jermainerobinson815@gmail.com
+        </span>
+
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+
+    <!-- PHONE -->
+
+    <a
+    class="link-button"
+    href="tel:+17573670547">
+
+      <div class="icon">
+        📱
+      </div>
+
+      <div class="link-text">
+
+        <span class="link-title">
+          Call or Text Me
+        </span>
+
+        <span class="link-description">
+          757-367-0547
+        </span>
+
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+
+  </div>
+
+
+  <!-- SOCIAL MEDIA -->
+
+  <div class="contact-title">
+
+    <h3>
+      Follow Me
+    </h3>
+
+    <p>
+      Connect with me on social media
+    </p>
+
+  </div>
+
+
+  <div class="social-row">
+
+    <a
+    class="social"
+    href="#"
+    target="_blank">
+
+      <span>📷</span>
+
+      Instagram
+
+    </a>
+
+
+    <a
+    class="social"
+    href="#"
+    target="_blank">
+
+      <span>📘</span>
+
+      Facebook
+
+    </a>
+
+
+    <a
+    class="social"
+    href="#"
+    target="_blank">
+
+      <span>𝕏</span>
+
+      X / Twitter
+
+    </a>
+
+  </div>
+
+
+  <footer>
+
+    © 2026 Jermaine Robinson
+
+    <br>
+
+    Technology • Business • Creative Projects
+
+  </footer>
+
+
+</div>
+
+</body>
+</html>
